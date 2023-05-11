@@ -17,8 +17,24 @@ router.post('/',(req,res)=>{
 router.get('/:id',(req,res)=>{
     const {id} =req.params;
     const foundUser = users.find((user)=> user.id ===id);
-    res.send(foundUser);
-    
+    res.send(foundUser);    
 });
+
+router.delete('/:id',(req,res)=>{
+    const {id} = req.params;
+    users = users.filter((user)=>user.id!=id);
+    res.send(users);
+});
+
+router.patch('/:id',(req,res)=>{
+    const {id} = req.params;
+    const user = users.find((user)=>user.id===id);
+    const {firstName, lastName, age} = req.body;
+    if(firstName)user.firstName=firstName;
+    if(lastName)user.lastName=lastName;
+    if(age)user.age=age;
+    res.send(users);
+});
+
 
 export default router;
