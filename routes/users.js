@@ -1,13 +1,9 @@
 import express from 'express';
-import {createUser,getUser,deleteUser,updateUser} from '../controllers/users.js';
+import {createUser,getUser,deleteUser,updateUser, getAllUsers} from '../controllers/users.js';
 
 const router = express.Router();
 
-let users=[];
-
-router.get('/', (req,res)=> {
-    res.send(users);
-});
+router.get('/',getAllUsers);
 
 router.post('/',createUser);
 
