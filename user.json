@@ -1,5 +1,15 @@
 {
     "firstName":"john",
     "lastName": "doe",
+    "age":30
+},
+{
+    "firstName":"jane",
+    "lastName": "doe",
     "age":25
+},
+{
+    "firstName":"jhonny",
+    "lastName": "doe",
+    "age":10
 }
